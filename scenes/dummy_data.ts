@@ -1,22 +1,22 @@
-import { difficultyLevel, trackName, SceneMetadata } from "./SceneMetadata";
+import { DifficultyLevel, TrackName, SceneMetadata } from "./SceneMetadata";
 
 export const dummyData: SceneMetadata[] = [
   {
     scene_id: "wii_moo_01",
-    track: trackName.moo_meadows,
+    track: TrackName.moo_meadows,
     coordinates: [100, 200],
     image: "scenes/images/wii_moo_01",
     slice_angle: 120,
-    difficulty: difficultyLevel.cakewalk,
+    difficulty: DifficultyLevel.cakewalk,
     tags: ["grass", "daylight", "cow"],
   },
   {
     scene_id: "wiiu_thwomp_01",
-    track: trackName.thwomp_ruins,
+    track: TrackName.thwomp_ruins,
     coordinates: [300, 400],
     image: "scenes/images/wiiu_thwomp_01",
     slice_angle: 120,
-    difficulty: difficultyLevel.easy,
+    difficulty: DifficultyLevel.easy,
     tags: ["interior", "brick"],
   },
 ];

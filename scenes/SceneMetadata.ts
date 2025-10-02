@@ -1,14 +1,14 @@
 export interface SceneMetadata {
   scene_id: string; // identifier -- enforce naming convention based on track
-  track: trackName; // trackname
+  track: TrackName; // trackname
   coordinates: [number, number]; // normalize coords to 1000x1000
   image: string; // image path (will be database query at some point)
   slice_angle: number; // default to 120 deg
-  difficulty: difficultyLevel; // expected difficulty of scene
+  difficulty: DifficultyLevel; // expected difficulty of scene
   tags: string[]; // notable themes or points of interest
 }
 
-export const enum difficultyLevel {
+export const enum DifficultyLevel {
   "cakewalk",
   "easy",
   "medium",
@@ -16,7 +16,7 @@ export const enum difficultyLevel {
   "impossible",
 }
 
-export const enum trackName {
+export const enum TrackName {
   // Mushroom Cup
   mario_kart_stadium = "wiiu_mario_kart_stadium",
   water_park = "wiiu_water_park",

@@ -1,29 +1,27 @@
 import js from '@eslint/js';
-import ts from '@typescript-eslint/eslint-plugin';
-import parser from '@typescript-eslint/parser';
-import prettier from 'eslint-plugin-prettier';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import globals from 'globals';
+
+const { browser } = globals;
 
 export default [
   js.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      parser,
-      parserOptions: {
-        project: './tsconfig.json',
-        sourceType: 'module',
-      },
+      parser: tsParser,
+      sourceType: 'module',
+      globals: {
+        ...browser,
+      }
     },
     plugins: {
-      '@typescript-eslint': ts,
-      prettier,
+      '@typescript-eslint': tsPlugin,
     },
     rules: {
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['warn'],
-        'prettier/prettier': 'error',
-        '@typescript-eslint/no-explicit-any': 'warn',
-        '@typescript-eslint/explicit-module-boundary-types': 'off'
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
 ];
